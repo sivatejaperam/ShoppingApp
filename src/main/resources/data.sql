@@ -1,7 +1,15 @@
-TRUNCATE  TABLE products;
+DROP TABLE IF EXISTS `products`;
 
-INSERT INTO PRODUCTS(id, description, name, price) values (1, 'desc1', 'phone 1', 1000);
-INSERT INTO PRODUCTS(id, description, name, price) values (2, 'desc2', 'phone 2', 2000);
-INSERT INTO PRODUCTS(id, description, name, price) values (3, 'desc3', 'phone 3', 3000);
-INSERT INTO PRODUCTS(id, description, name, price) values (4, 'desc4', 'phone 4', 4000);
+create table products
+(
+    id  bigint not null auto_increment primary key,
+    description varchar(255) null,
+    name        varchar(255) NOT null,
+    price       double       not null
+);
+
+INSERT INTO PRODUCTS( description, name, price) values ( 'desc1', 'phone 1', 1000);
+INSERT INTO PRODUCTS( description, name, price) values ( 'desc2', 'phone 2', 2000);
+INSERT INTO PRODUCTS( description, name, price) values ( 'desc3', 'phone 3', 3000);
+INSERT INTO PRODUCTS( description, name, price) values ( 'desc4', 'phone 4', 4000);
 

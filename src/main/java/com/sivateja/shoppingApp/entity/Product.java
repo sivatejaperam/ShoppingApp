@@ -1,9 +1,7 @@
 package com.sivateja.shoppingApp.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.annotation.Nullable;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,10 +14,13 @@ import lombok.Setter;
 public class Product {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(nullable = false, length = 50, unique = true)
     private String name;
+    @Column(nullable = false)
     private double price;
+    @Column(nullable = true, length = 500)
     private String description;
 
 }
